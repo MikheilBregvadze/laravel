@@ -108,6 +108,9 @@ class LectorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lector = Lector::find($id);
+
+        $lector->delete();
+        return redirect()->route('lector.index')->with('success', 'Data Deleted');
     }
 }

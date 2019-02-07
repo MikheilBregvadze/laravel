@@ -34,13 +34,35 @@
                     <td>{{ $row['first_name'] }}</td>
                     <td>{{ $row['last_name'] }}</td>
                     <td><a href="{{ action('LectorController@edit', $row['id']) }}" class="btn btn-warning">Edit</a></td>
-                    <td></td>
+                    <td>
+                        <form method="POST" class="delete_form" action="{{ action('LectorController@destroy', $row['id']) }}">
+                            
+                            {{ csrf_field() }}
+                            <input type="hidden" name="_method" value="DELETE">
+                        
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
                 
             </table>
         </div>
     </div>
+
+    <script>
+    $(document).ready(function() {
+        $('.delete_form').on('submit', function() {
+            if(confirm("Are you sure you want to delete it?")) {
+                return true
+            }else {
+                return false
+            }
+        });
+    });
+
+    
+    </script>
 
 @endsection
 
