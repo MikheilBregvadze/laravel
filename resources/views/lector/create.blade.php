@@ -25,7 +25,7 @@
                 </div>
 
             @endif
-            <form method="POST" action="{{ url('lector') }}">
+            <form method="POST" action="{{ route('lector.store') }}">
                 
                 {{ csrf_field() }}
 

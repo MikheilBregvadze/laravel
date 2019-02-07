@@ -14,7 +14,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all()->toArray();
+        $students = Student::all();
 
         return view('student.index', compact('students'));
     }
@@ -42,12 +42,10 @@ class StudentController extends Controller
             'last_name'   => 'required',
         ]);
 
-        $student = new Student([
-            'first_name' => $request->get('first_name'),
-            'last_name' => $request->get('last_name'),
+        $student = Student::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
         ]);
-
-        $student->save();
 
         return redirect()->route('student.index')->with('success', 'Data Added');
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Lector;
 
 class LectorController extends Controller
 {
@@ -13,7 +14,8 @@ class LectorController extends Controller
      */
     public function index()
     {
-        //
+        $lectors = Lector::All();
+        return view('lector.index', compact('lectors'));
     }
 
     /**
@@ -34,7 +36,21 @@ class LectorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, [
+            'first_name'  => 'required', 
+            'last_name'   => 'required',
+        ]);
+
+        $lector = Lector::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+        ]);
+
+        // $lectors = Lector::All();
+
+        return redirect('/lector')->with('success', 'Data Added');
+
     }
 
     /**

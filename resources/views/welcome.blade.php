@@ -10,7 +10,7 @@
 <body>
         <ul class="nav mt-3 ml-3">
             <li class="nav-item">
-              <a class="nav-link btn btn-warning"  href="/student/create">Add Lectors</a>
+              <a class="nav-link btn btn-warning"  href="/lector/create">Add Lectors</a>
             </li>
             <li class="nav-item ml-3">
               <a class="btn btn-warning nav-link" href="/student/create">Add Students</a>

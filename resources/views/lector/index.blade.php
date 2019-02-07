@@ -18,7 +18,7 @@
             @endif
 
             <div class="text-right">
-                <a href="{{ route('student.create') }}" class="btn btn-primary">Add</a>
+                <a href="{{ route('lector.store') }}" class="btn btn-primary">Add</a>
             </div>
             <br>
             <table class="table table-bordered">
@@ -29,7 +29,7 @@
                     <th>Delete</th>
                 </tr>
 
-                @foreach($students as $row)
+                @foreach($lectors as $row)
                 <tr>
                     <td>{{ $row['first_name'] }}</td>
                     <td>{{ $row['last_name'] }}</td>
