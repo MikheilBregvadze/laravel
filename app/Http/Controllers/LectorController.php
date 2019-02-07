@@ -14,8 +14,8 @@ class LectorController extends Controller
      */
     public function index()
     {
-        $lectors = Lector::All();
-        return view('lector.index', compact('lectors'));
+        $lector = Lector::All();
+        return view('lector.index', compact('lector'));
     }
 
     /**
@@ -72,7 +72,9 @@ class LectorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lector = Lector::find($id);
+
+        return view('lector.edit', compact('lector', 'id'));
     }
 
     /**
@@ -84,7 +86,18 @@ class LectorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'first_name'  => 'required', 
+            'last_name'   => 'required',
+        ]);
+
+        $lector = Lector::find($id);
+
+        $lector->first_name = $request->get('first_name');
+        $lector->last_name = $request->get('last_name');
+
+        $lector->save();
+        return redirect()->route('lector.index')->with('success', 'Data Updated');
     }
 
     /**

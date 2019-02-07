@@ -33,7 +33,7 @@
                 <tr>
                     <td>{{ $row['first_name'] }}</td>
                     <td>{{ $row['last_name'] }}</td>
-                    <td></td>
+                    <td><a href="{{ action('StudentController@edit', $row['id']) }}" class="btn btn-warning">Edit</a></td>
                     <td></td>
                 </tr>
                 @endforeach

@@ -25,7 +25,7 @@
                 </div>
 
             @endif
-            <form method="POST" action="{{ url('student') }}">
+            <form method="POST" action="{{ route('student.store') }}">
                 
                 {{ csrf_field() }}
 

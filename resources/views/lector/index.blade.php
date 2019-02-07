@@ -29,11 +29,11 @@
                     <th>Delete</th>
                 </tr>
 
-                @foreach($lectors as $row)
+                @foreach($lector as $row)
                 <tr>
                     <td>{{ $row['first_name'] }}</td>
                     <td>{{ $row['last_name'] }}</td>
-                    <td></td>
+                    <td><a href="{{ action('LectorController@edit', $row['id']) }}" class="btn btn-warning">Edit</a></td>
                     <td></td>
                 </tr>
                 @endforeach

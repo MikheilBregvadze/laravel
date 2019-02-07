@@ -16,5 +16,14 @@
               <a class="btn btn-warning nav-link" href="/student/create">Add Students</a>
             </li>
         </ul>
+
+         <ul class="nav mt-3 ml-3">
+            <li class="nav-item">
+              <a class="nav-link btn btn-success"  href="/lector">Lectors</a>
+            </li>
+            <li class="nav-item ml-3">
+              <a class="btn btn-success nav-link" href="/student">Students</a>
+            </li>
+        </ul>
 </body>
 </html>
