@@ -25,6 +25,7 @@
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Photo</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -33,6 +34,7 @@
                 <tr>
                     <td>{{ $row['first_name'] }}</td>
                     <td>{{ $row['last_name'] }}</td>
+                    <td>{{ $row['file'] }}</td>
                     <td><a href="{{ action('LectorController@edit', $row['id']) }}" class="btn btn-warning">Edit</a></td>
                     <td>
                         <form method="POST" class="delete_form" action="{{ action('LectorController@destroy', $row['id']) }}">
@@ -60,8 +62,6 @@
             }
         });
     });
-
-    
     </script>
 
 @endsection

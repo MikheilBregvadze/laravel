@@ -19,7 +19,12 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ action('LectorController@update', $id) }}">
+        <img  src="/img/lector/{{ $lector->id .'/'. $lector->file }}" alt="image" width="600px">
+
+        <br>
+        <br>
+
+        <form method="POST" action="{{ action('LectorController@update', $id) }}" enctype="multipart/form-data">
             
             {{ csrf_field() }}
             <input type="hidden" name="_method" value="PATCH">
@@ -32,6 +37,12 @@
             <div class="form-group">
 
                 <input type="text" name="last_name" class="form-control" value="{{ $lector->last_name }}" placeholder="Enter Last Name">
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="file" name="file" placeholder="Choose file">
 
             </div>
 

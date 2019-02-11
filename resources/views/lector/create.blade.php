@@ -25,7 +25,7 @@
                 </div>
 
             @endif
-            <form method="POST" action="{{ route('lector.store') }}">
+            <form method="POST" action="{{ route('lector.store') }}" enctype="multipart/form-data">
                 
                 {{ csrf_field() }}
 
@@ -38,6 +38,12 @@
                 <div class="form-group">
 
                     <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name">
+
+                </div>
+
+                <div class="form-group">
+
+                    <input type="file" name="file" placeholder="Choose file">
 
                 </div>
 

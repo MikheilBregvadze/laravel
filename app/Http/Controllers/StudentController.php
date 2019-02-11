@@ -47,6 +47,10 @@ class StudentController extends Controller
             'last_name' => $request->last_name,
         ]);
 
+        if($request->hasFile('file')) {
+            return 'yes';
+        }
+
         return redirect()->route('student.index')->with('success', 'Data Added');
     }
 
